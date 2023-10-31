@@ -20,15 +20,15 @@ describe('AppController', () => {
     });
   });
 
-  describe('status',() => {
-    it('should return status "OK"', () => {
+  describe('status',()=> {
+    it('should return "OK"', ()=> {
       expect(appController.getStatus()).toBe("OK");
-    })
+    });
 
-    it('should not return "NOT OK"', () => {
-      jest.spyOn(appController,'getStatus').mockImplementation(()=>"NOT OK");
-      expect(appController.getStatus).toBe("OK");
-    })
-  })
+    it('should not return "OK"', ()=> {
+      jest.spyOn(appController,"getStatus").mockImplementation(() => "NOT OK")
+      expect(appController.getStatus()).toBe("OK");
+    });
+  });
 
 });
