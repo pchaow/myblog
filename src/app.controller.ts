@@ -14,4 +14,9 @@ export class AppController {
   getStatus() : string {
     return this.appService.getStatus();
   }
+
+  @Get('count')
+  getCount() : string {
+    return this.appService.increaseCount().toString();
+  }
 }
