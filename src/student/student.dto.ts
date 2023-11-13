@@ -1,7 +1,9 @@
 import { Type } from "class-transformer";
-import { IsNotEmpty,IsDate } from "class-validator";
+import {IsDefined,IsDate, ValidateNested } from "class-validator";
 
 export class ActivityDto {
+
+    @IsDefined()
     name : string;
 }
 
@@ -19,8 +21,11 @@ export class StudentDto {
     @IsDate()
     birthdate : Date;
 
+    @Type(()=>PetDto)
     pet : PetDto;
 
-    activities : [ActivityDto]
+    @ValidateNested({ each: true })
+    @Type(() => ActivityDto)
+    activities : ActivityDto[]
 
 }

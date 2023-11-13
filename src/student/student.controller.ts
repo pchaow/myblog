@@ -11,6 +11,6 @@ export class StudentController {
         let today = new Date();
         let yeardiff = today.getFullYear() - student.birthdate.getFullYear();
         
-        return yeardiff;
+        return student;
     }
 }

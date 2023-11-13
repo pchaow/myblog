@@ -11,13 +11,13 @@ content-type: application/json
 {
     "id" : "123456",
     "name" : "John Doe",
-    "birthdate" : "2000-13-31",
+    "birthdate" : "2000-10-31",
     "pet" : {
         "name" : "Mojo",
         "kind" : "Monkey"
     },
     "activities" : [
-        {"name" : "Freshmen Welcome"},
+        {"ccc" : "Freshmen Welcome","hosted" : "UP"},
         {"name" : "Sports Day"},
         {"name" : "ICT Loy Krathong"}
     ]
