@@ -33,3 +33,38 @@ POST {{baseUrl}}/cat
     <name>Alan</name>
     <color>Blue</time>
 </request>
+
+
+###
+GET {{baseUrl}}/cat
+###
+
+###
+GET {{baseUrl}}/cat/1
+###
+
+###
+POST {{baseUrl}}/cat
+content-type: application/json
+
+{
+    "name" : "JOHN",
+    "color" : "black",
+    "description" : "john description"
+}
+###
+
+###
+PUT {{baseUrl}}/cat/1
+content-type: application/json
+
+{
+    "id" : 1,
+    "name" : "JOHN",
+    "color" : "white",
+    "description" : "john description"
+}
+###
+DELETE  {{baseUrl}}/cat/2
+
+###

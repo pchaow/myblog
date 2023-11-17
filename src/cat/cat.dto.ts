@@ -4,17 +4,24 @@ export class CreateCatDTO {
 
     @IsNotEmpty()
     name : string;
-    
-    @IsNotEmpty()
-    sex : string;
 
     @IsNotEmpty()
-    color : string;
+    color : string;    
+
+    //optional
+    description? : string;
+}
+
+export class UpdateCatDTO {
 
     @IsNotEmpty()
-    age : number;
+    id : number;
 
-    
+    @IsNotEmpty()
+    name : string;
+
+    @IsNotEmpty()
+    color : string;    
 
     //optional
     description? : string;
