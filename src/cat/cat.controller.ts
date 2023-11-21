@@ -2,7 +2,7 @@ import { Body, Controller, Get,Post, Req } from "@nestjs/common";
 import { CatService } from "./cat.service";
 import { Request } from 'express';
 import { CreateCatDTO } from "./cat.dto";
-import { create } from "domain";
+
 @Controller('cat')
 export class CatController {
     constructor(private readonly catService : CatService){
@@ -20,7 +20,8 @@ export class CatController {
     }
 
     @Post()
-    postCreate(@Body() createCatDTO : CreateCatDTO) : string {
+    postCreate(@Body() createCatDTO) : any {
+        return createCatDTO;
         let name = createCatDTO.name;
         let sex = createCatDTO.sex;
         let color = createCatDTO.color;
