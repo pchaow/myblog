@@ -18,4 +18,20 @@ export class CreateCatDTO {
 
     //optional
     description? : string;
+
+    validate() : boolean {
+        if(this.age === undefined || this.age === null){
+            return false;
+        }
+        return true;
+    }
+
+    validateMessage() : string[] {
+        let errorMessage = [];
+        if(this.age === undefined || this.age === null){
+            errorMessage.push("Age is required")
+        }
+
+        return errorMessage;
+    }
 }
