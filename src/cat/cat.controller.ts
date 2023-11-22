@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get,Param,Post, Req, Put } from "@nestjs/comm
 import { CatService } from "./cat.service";
 import { Request } from 'express';
 import { CreateCatDTO, UpdateCatDTO } from "./cat.dto";
-import { create } from "domain";
+
 import { Cat } from "./cat.entities";
 @Controller('cat')
 export class CatController {
