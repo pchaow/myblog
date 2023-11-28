@@ -3,7 +3,7 @@ import { CatService } from "./cat.service";
 import { Request } from 'express';
 import { CreateCatDTO, UpdateCatDTO } from "./cat.dto";
 
-import { Cat } from "./cat.entities";
+import { Cat, CatProfile } from "./cat.entities";
 @Controller('cat')
 export class CatController {
     constructor(private readonly catService : CatService){
@@ -12,13 +12,20 @@ export class CatController {
 
     @Get()
     getIndex(@Req() request : Request) : Promise<Cat[]> {
-        return this.catService.findAll();
+        return this.catService.findAll()
 
     }
 
     @Get(":id")
     getCatById(@Param('id') id : number) : Promise<Cat> {
         return this.catService.findOne(id)
+    }
+
+    @Get(":id/profile")
+    async getCatProfileById(@Param('id') id : number) : Promise<CatProfile> {
+        let cat = await this.catService.findOne(id)
+        let profile = await cat.profile
+        return profile
     }
 
     @Post()

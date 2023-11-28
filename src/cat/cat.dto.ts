@@ -1,4 +1,21 @@
-import { IsNotEmpty } from "class-validator";
+import { Type } from "class-transformer";
+import { IsNotEmpty, ValidateNested } from "class-validator";
+
+export class CatProfileDTO {
+    @IsNotEmpty()
+    father : string;
+
+    @IsNotEmpty()
+    mother : string;
+
+}
+
+export class CatFoodDTO {
+    @IsNotEmpty()
+    name : string;
+    @IsNotEmpty()
+    type : string;
+}
 
 export class CreateCatDTO {
 
@@ -10,7 +27,17 @@ export class CreateCatDTO {
 
     //optional
     description? : string;
+
+    @Type(()=>CatProfileDTO)
+    profile : CatProfileDTO;
+
+    @ValidateNested({ each: true })
+    @Type(() => CatFoodDTO)
+    foods : CatFoodDTO[]
+
 }
+
+
 
 export class UpdateCatDTO {
 
@@ -26,19 +53,4 @@ export class UpdateCatDTO {
     //optional
     description? : string;
 
-    validate() : boolean {
-        if(this.age === undefined || this.age === null){
-            return false;
-        }
-        return true;
-    }
-
-    validateMessage() : string[] {
-        let errorMessage = [];
-        if(this.age === undefined || this.age === null){
-            errorMessage.push("Age is required")
-        }
-
-        return errorMessage;
-    }
 }

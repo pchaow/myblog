@@ -6,8 +6,8 @@ import { CatService } from './cat/cat.service';
 import { StudentController } from './student/student.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Cat } from './cat/cat.entities';
-import { SrvRecord } from 'dns';
+import { Cat, CatProfile } from './cat/cat.entities';
+import { CatFood } from './cat/catfood.entities';
 
 @Module({
   imports: [
@@ -18,7 +18,8 @@ import { SrvRecord } from 'dns';
         let option : TypeOrmModuleOptions = {
           type : 'sqlite',
           database : configService.get<string>("DATABASE_NAME",'database.db'),
-          entities : [Cat]
+          entities : [CatProfile,CatFood,Cat],
+          synchronize : true
         }
         
         return option;
@@ -26,7 +27,7 @@ import { SrvRecord } from 'dns';
       inject:[ConfigService]
     }),
 
-    TypeOrmModule.forFeature([Cat])
+    TypeOrmModule.forFeature([Cat,CatProfile,CatFood])
   ],
   controllers: [AppController, CatController,StudentController],
   providers: [CatService,AppService],

@@ -40,7 +40,11 @@ GET {{baseUrl}}/cat
 ###
 
 ###
-GET {{baseUrl}}/cat/1
+GET {{baseUrl}}/cat/4
+###
+
+###
+GET {{baseUrl}}/cat/4/profile
 ###
 
 ###
@@ -50,21 +54,33 @@ content-type: application/json
 {
     "name" : "JOHN",
     "color" : "black",
-    "description" : "john description"
+    "description" : "john description",
+    "profile" : {
+        "father" : "Brown",
+        "mother" : "Patty"
+    },
+    "foods" : [
+        {
+            "name" : "MIO",
+            "type" : "Main Food"
+        },
+        {
+            "name" : "MIO Creamey",
+            "type" : "Snack"
+        }
+    ]
 }
 ###
 
-###
-PUT {{baseUrl}}/cat/1
+PUT {{baseUrl}}/cat/4
 content-type: application/json
 
 {
-    "id" : 1,
+    "id" : 4,
     "name" : "JOHN",
     "color" : "white",
     "description" : "john description"
 }
 ###
 DELETE  {{baseUrl}}/cat/2
-
 ###
