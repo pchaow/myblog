@@ -8,6 +8,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { Cat, CatProfile } from './cat/cat.entities';
 import { CatFood } from './cat/catfood.entities';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [
@@ -27,9 +30,13 @@ import { CatFood } from './cat/catfood.entities';
       inject:[ConfigService]
     }),
 
-    TypeOrmModule.forFeature([Cat,CatProfile,CatFood])
+    TypeOrmModule.forFeature([Cat,CatProfile,CatFood]),
+
+    AuthModule,
+
+    UsersModule
   ],
   controllers: [AppController, CatController,StudentController],
-  providers: [CatService,AppService],
+  providers: [CatService,AppService, AuthService],
 })
 export class AppModule {}

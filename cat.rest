@@ -84,3 +84,13 @@ content-type: application/json
 ###
 DELETE  {{baseUrl}}/cat/2
 ###
+
+
+POST {{baseUrl}}/auth/login
+content-type: application/json
+
+
+{
+    "username" : "john",
+    "password" : "changeme"
+}
