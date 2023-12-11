@@ -60,7 +60,11 @@ export class CatService {
         })
         Logger.log(JSON.stringify(foods))
 
-        foods.forEach(async f=> await f.save())
+        await Promise.all(foods.map(async (food) => {
+            await food.save()
+        }));
+        
+        
 
         await result.reload()
         return result
