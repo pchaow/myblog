@@ -11,6 +11,7 @@ import { CatFood } from './cat/catfood.entities';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { AuthService } from './auth/auth.service';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -31,9 +32,8 @@ import { AuthService } from './auth/auth.service';
     }),
 
     TypeOrmModule.forFeature([Cat,CatProfile,CatFood]),
-
+    JwtModule,
     AuthModule,
-
     UsersModule
   ],
   controllers: [AppController, CatController,StudentController],

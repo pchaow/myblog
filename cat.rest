@@ -84,19 +84,17 @@ content-type: application/json
 ###
 DELETE  {{baseUrl}}/cat/2
 ###
-
-
 POST {{baseUrl}}/auth/login
 content-type: application/json
 
 
 {
     "username" : "john",
-    "password" : "changeme11"
+    "password" : "changeme"
 }
 
 ###
 
 GET {{baseUrl}}/auth/profile
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjI4OTUzNCwiZXhwIjoxNzAyMjg5NTk0fQ.dNwedqseu8uFBEEWxiwYcYkRIv2m4kqGkM5BNsxgIzA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjI5MTUzMywiZXhwIjoxNzAyMjkxNTkzfQ.LF_UGMZ2w_ejAzmdeOHRW1BPgXEOgvjWc5JbwK_UY4U
