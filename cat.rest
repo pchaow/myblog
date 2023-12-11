@@ -92,5 +92,11 @@ content-type: application/json
 
 {
     "username" : "john",
-    "password" : "changeme"
+    "password" : "changeme11"
 }
+
+###
+
+GET {{baseUrl}}/auth/profile
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjI4OTUzNCwiZXhwIjoxNzAyMjg5NTk0fQ.dNwedqseu8uFBEEWxiwYcYkRIv2m4kqGkM5BNsxgIzA
