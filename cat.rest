@@ -95,6 +95,59 @@ content-type: application/json
 
 ###
 
+POST {{baseUrl}}/auth/login
+content-type: application/json
+
+
+{
+    "username" : "maria",
+    "password" : "guess"
+}
+
+###
+//john
 GET {{baseUrl}}/auth/profile
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjI5MTUzMywiZXhwIjoxNzAyMjkxNTkzfQ.LF_UGMZ2w_ejAzmdeOHRW1BPgXEOgvjWc5JbwK_UY4U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjkxMzA4MSwiZXhwIjoxNzAyOTEzMTQxfQ.6pYjqSqX4k8PC1qX7Xt5d9bF2dcWQmfQFQ3qZu4-III
+
+
+###
+//maria
+GET {{baseUrl}}/auth/profile
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoibWFyaWEiLCJpYXQiOjE3MDI5MTI5MDcsImV4cCI6MTcwMjkxMjk2N30.jScy-IEphY2kFmyLSgAhrkRhHGA2AO6KLMYor_UPBsQ
+
+
+###
+
+###
+//no user
+GET {{baseUrl}}/bothUsers
+content-type: application/json
+
+
+###
+
+GET {{baseUrl}}/bothUsers
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjkxMzA4MSwiZXhwIjoxNzAyOTEzMTQxfQ.6pYjqSqX4k8PC1qX7Xt5d9bF2dcWQmfQFQ3qZu4-III
+
+###
+
+###
+
+GET {{baseUrl}}/only-users
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjkxMzA4MSwiZXhwIjoxNzAyOTEzMTQxfQ.6pYjqSqX4k8PC1qX7Xt5d9bF2dcWQmfQFQ3qZu4-III
+
+###
+
+
+###
+
+GET {{baseUrl}}/only-admin
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwMjkxMzE2MywiZXhwIjoxNzAyOTEzMjIzfQ.Snuj-Hp_n2QmQi3AF4Wxngdm6vnObhV2EDiotb_Il-8
+
+###
+
